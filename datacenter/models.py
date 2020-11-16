@@ -37,6 +37,5 @@ class Visit(models.Model):
         minutes, seconds = divmod(remainder, 60)
         return f"{int(hours):{'02'}}:{int(minutes):{'02'}}:{int(seconds):{'02'}}"
 
-    def is_visit_long(self):
-        if self.leaved_at:
-            return self.get_duration() > 3600
+    def is_visit_long(self, duration=3600):
+        return self.get_duration() > duration
