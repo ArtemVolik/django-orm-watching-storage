@@ -15,11 +15,15 @@
 ```
 pip install -r requirements.txt
 ```
-- Чтобы подключить интерфейс к базе данных измените соотвествующие поля настроек доступа в словаре `DATABASE` 
-в файле `settings.py`. Затем создайте файл `.env` и поместите в него логин/пароль от базы данных
+- Чтобы подключить интерфейс к базе данных, создайте файл `.env` и добавьте в него соотвествующие поля настроек доступа. 
 ```
-DATABASE_USER='login'
-DATABASE_PASSWORD='password'
+DB_ENGINE=put_here_the_database_backend_to_use
+DB_HOST=put_here_your_database_host
+DB_PORT=put_here_your_db_port
+DB_NAME=put_here_db_nam
+DB_USER=put_here_db_user_name
+DB_PASSWORD=put_here_your_password
+SECRET_KEY=put_here_your_secret_key
 ```
 
 - Выполните в команндной строке, чтобы запустить сервер и просматривать интерфейс локально:
@@ -28,4 +32,4 @@ DATABASE_PASSWORD='password'
  python manage.py runserver 0.0.0.0:8000
 ``` 
     
-- Для включения режима отладки поместите строку `DEBUG=true` в файл `settings.py`
+- Для включения режима отладки поместите строку `DEBUG=true` в файл `.env`
